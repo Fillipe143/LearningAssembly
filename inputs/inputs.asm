@@ -1,0 +1,27 @@
+section .bss
+	n resb 0xA 
+
+section .text
+global _start
+_start:
+	mov eax, 0x3
+	mov ebx, 0x0
+	mov ecx, n
+	mov edx, 0xA
+	int 0x80 
+
+	mov eax, 0x4
+	mov ebx, 0x1
+	mov ecx, n
+	mov edx, 0xA
+	int 0x80
+
+	mov eax, 0x4
+	mov ebx, 0x1
+	mov ecx, 0xA
+	mov edx, 0x1
+	int 0x80
+
+	mov eax, 0x1
+	mov ebx, 0x0
+	int 0x80
